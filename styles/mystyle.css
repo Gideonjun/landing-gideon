@@ -1,0 +1,18 @@
+body{
+	font-family: helvetica;
+	color: #FFFFFF;
+	background-color: #444444;
+}
+
+#weather {
+	background-color: #222222;
+	width: 200px;
+	padding: 6px;
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+
