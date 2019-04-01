@@ -35,8 +35,8 @@ function onAPISucces(response) {
 	var type = response.weather[0].description;
 
 	//hiermee probeer ik vanuit de input een event met de google map te laten gebeuren
-	var latInfo = response.coord.lat[0];
-	var lonInfo = response.coord.lon[0];
+	var latInfo = response.coord.lat;
+	var lonInfo = response.coord.lon;
 
 	//icon voor het weer
 	var iconUrl = 'http://openweathermap.org/img/w/'+response.weather[0].icon+'.png';
