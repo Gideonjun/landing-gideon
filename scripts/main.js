@@ -34,12 +34,19 @@ function onAPISucces(response) {
 	// get type of weather in string format
 	var type = response.weather[0].description;
 
+	//hiermee probeer ik vanuit de input een event met de google map te laten gebeuren
+	var latInfo = response.coord.lat[0];
+	var lonInfo = response.coord.lon[0];
+
+	//icon voor het weer
+	var iconUrl = 'http://openweathermap.org/img/w/'+response.weather[0].icon+'.png';
+
 	// get temperature in Celcius
 	var degC = Math.floor(response.main.temp - 273.15);
 
 	// render weather in DOM
 	var weatherBox = document.getElementById('weather');
-	weatherBox.innerHTML = degC + "&#176;C <br>" + type;
+	weatherBox.innerHTML = degC + "&#176;C <br><img src="+iconUrl+"><br>" + type;
 
 
 }
@@ -51,11 +58,6 @@ function onAPIError(error) {
 	var weatherBox = document.getElementById('weather');
 	weatherBox.innerHTML = 'No weather data available <br /> Did you enter a valid city?'; 
 }
-
-// init data stream
-document.getElementById("getWeather").onclick = function(){
-	getAPIdata();
-};
 
 
 //---------------------------------------------------------------------------------------------
@@ -94,3 +96,8 @@ document.getElementById("getWeather").onclick = function(){
 	      }
 
 	      google.maps.event.addDomListener(window, 'load', initialize);
+
+// init data stream
+document.getElementById("getWeather").onclick = function(){
+	getAPIdata();
+};
