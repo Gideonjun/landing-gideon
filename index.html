@@ -2,20 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Weather API</title>
+		<title>Spacex Landing</title>
 		<link rel="stylesheet" type="text/css" href="styles/mystyle.css">
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZtQT9clDr2Vm94yoVjmP50XpdmqN0o4A"></script>
 	</head>
 	<body>
-		<h1>Weather API</h1>
-		<article id="weather"></article>
-		<form>
-			<fieldset>
-				<legend>Get current weather</legend>
-				<label for="city">City:</label>
+	<img class="logo" src="images/spacex.png" alt="Logo spacex">
+	<div class="container">
+	
+			<form>
+				<h1>Weer locatie</h1>
+				<label for="city">Stad:</label>
 				<input type="text" name="city" id="city" />
-				<input type="button" id="getWeather" value="get current weather" />
-			</fieldset>
-		</form>
+				<input type="button" id="getWeather" value="huidige weer" />
+				<article id="weather" class="weerdisplay"></article>
+			</form>
+		
+	</div>
+	<div id="map" class="mapdisplay"></div>
+	
 		<script src="scripts/main.js"></script>
 	</body>
 </html>
